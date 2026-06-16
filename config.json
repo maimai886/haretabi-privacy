@@ -1,12 +1,12 @@
 {
-  "configVersion": 2,
+  "configVersion": 3,
   "minAppVersion": "1.0.0",
   "killSwitch": false,
   "notice": null,
   "disable": {
     "kemono": ["yatagarasu", "hebi", "tora", "tengu", "ryujin", "manekineko", "shachihoko", "bixi", "senrigan", "junpuji", "fenghuang", "sekitoba"],
     "category": [],
-    "spotBatch": [],
+    "spotBatch": ["wave2_castle", "wave2_shaji", "wave2_tw"],
     "wardrobe": [],
     "treasure": [],
     "mapRegion": []

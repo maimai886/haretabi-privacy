@@ -80,7 +80,7 @@
     <h3>2. アカウントを作らない場合(ゲスト)</h3>
     <ul>
       <li>記録、写真、メモ、旅の計画、眷属の育成状況、設定などは、すべて端末内(アプリ内のデータベースと書類フォルダ)に保存され、当方のサーバーには送信されません。</li>
-      <li>クラウドバックアップ・復元、友だち(結縁)、旅の共有、AI 旅のおとも など、アカウントが必要な機能は利用できません。</li>
+      <li>クラウドバックアップ・復元、友だち(結縁)、旅の共有、AI 旅のおとも、ルートの公開 など、アカウントが必要な機能は利用できません。公開されたルートの閲覧(第5章)はゲストでもできます。</li>
       <li>ゲストでも、地図・天気・アプリ設定の取得、場所の検索、アプリの更新、購入のために、第12章と第6章に記載する外部サービスとの通信が発生します。</li>
       <li>アプリを削除すると端末内のデータもすべて削除されます。ゲストのデータは当方では復元できません。</li>
     </ul>
@@ -106,24 +106,35 @@
       <li>友だち登録は、互いの名刺 QR コードをカメラで読み取って行います。名刺 QR コードには、プロフィール名、一緒にいる眷属、絆の段階、着せ替え、晴れた地域の数、記録数、端末内の識別子、およびログイン中はユーザー ID が含まれます。QR コードを見せた相手はこれらを読み取ることができます。</li>
       <li>ログイン中は、名刺情報(プロフィール名・眷属・絆の段階・着せ替え・晴れた地域の数・記録数)を当方のサーバーに保存し、互いに登録した友だちだけが閲覧できます。</li>
       <li>「共通の足あと」の共有をオンにした場合に限り、訪れた内蔵の名所(アプリに収録された公開の名所)の ID 一覧も友だちと共有され、ふたりとも訪れた場所の表示に使われます。初期設定はオフで、マイページからいつでも変更できます。自分で登録した場所、現在地、写真、メモは共有されません。</li>
+      <li><strong>最近行ったところ</strong>:公開をオンにした場合に限り(初期設定はオフ)、最近記録した内蔵の名所のうち最大 30 件の ID と訪れた日付(日のみ)を当方のサーバーに保存し、互いに友だちになっている相手だけが閲覧できます。自分で登録した場所、場所の検索で追加した場所、現在地や座標、時刻、メモ、写真は共有されません。設定は結縁帳とマイページから変更でき、オフにするとサーバー上の公開データはすぐに削除されます。</li>
       <li>あなたが相手の QR コードを読み取ると、相手の「結縁のお誘い」一覧に、あなたのプロフィール名と眷属が表示されます。</li>
       <li>不正防止(大量登録の防止)のため、友だち登録の操作日時を記録します。</li>
       <li>友だちの解除・ブロックは結縁帳から行えます。解除すると相互の閲覧はすぐに停止します。</li>
-      <li><strong>保存期間</strong>:友だち関係、名刺情報、ブロック情報、操作記録はアカウント削除時に削除されます。</li>
+      <li><strong>保存期間</strong>:友だち関係、名刺情報、ブロック情報、操作記録、最近行ったところの公開データはアカウント削除時に削除されます。</li>
     </ul>
 
-    <h3>5. 旅の共有・行程の送信・PDF</h3>
+    <h3>5. 旅の共有・行程の送信・みんなのルート・PDF</h3>
     <h4>旅の共有(一緒に計画)</h4>
     <ul>
       <li>ログイン中のユーザーは、旅を共有して共同で編集できます。共有すると、次の情報が当方のサーバー(Supabase)に保存され、その旅のメンバー全員(閲覧のみのメンバーを含む)が閲覧できます:旅のタイトル・日程・国、行程(名所・立ち寄り先の名前、時刻、滞在時間、メモ、完了状況。内蔵の名所は公開されている座標)、持ち物リスト、共同の費用帳(金額・通貨・分類・メモ・支払った人と割り勘相手)、共有した予約(名称・予約番号・日時・場所・住所・メモ)、メンバーのプロフィール名・眷属・役割、誰がいつ変更したかの記録。</li>
       <li>旅全体のメモは共有時にアップロードされません。自分で登録した場所は名前のみで、座標は共有されません。場所の検索で追加した場所は、公開の地図データ(OpenStreetMap)の名前と座標で共有されます。</li>
       <li>変更はリアルタイムで他のメンバーの端末に配信されます。</li>
       <li>招待コード/リンク(既定で 72 時間・5 回まで有効)を知っている人はその旅に参加でき、参加前に旅のタイトルと招待した人のプロフィール名・眷属を確認できます。招待コードは信頼できる相手にだけ送ってください。</li>
+      <li>結縁帳から、互いに友だちになっている相手を旅に招待することもできます。この招待は招待された本人だけが確認・承諾でき、旅のタイトル・日程と招待した人のプロフィール名・眷属が表示されます。招待した人は招待を取り消せます。招待は 14 日で期限切れになり、期限切れの招待は定期的に削除されます。</li>
       <li><strong>保存期間と削除</strong>:共有した旅は、主催者が削除するか、メンバーがいなくなるまで保存されます。旅の中で削除した費用・予約は削除済みとして扱われ、旅が削除されると完全に消去されます。あなたが旅から抜けたりアカウントを削除したりしても、他のメンバーが残っている旅では、あなたが追加した内容は旅の一部として(あなたの名前の紐づけを外した状態で)残ります。</li>
     </ul>
     <h4>行程の送信(リンク・QR・コード)</h4>
     <ul>
       <li>行程と持ち物リストをリンク・QR コード・テキストコードに変換し、あなたが選んだ方法(メッセージアプリなど)で送る機能です。当方のサーバーを経由しません。記録・写真・費用・同行者は含まれず、自分で登録した場所は名前のみ含まれます。</li>
+    </ul>
+    <h4>みんなのルート(公開ルート)</h4>
+    <ul>
+      <li>機能が提供されている場合に限り、ログインしたユーザーは旅程を「ルートとして公開」できます。公開すると、次の情報が本アプリの利用者(ゲストを含む)に公開されます:スポット(アプリ内の図鑑スポット、および場所の検索で選んだ公開の場所)の名前・位置・順番・何日目か・滞在時間の目安、日数、国・地域、公開時にメニューから選んだ項目(旅のスタイル・誰と・ペース・移動手段・季節・表紙とハイライトのスポット)、公開・更新の日時、「いいね」数と「使われた」数。</li>
+      <li>自分で登録した場所、写真、メモ、費用、予約、同行者、旅のタイトルや日付は公開されません。自由に文章を入力する欄はありません。</li>
+      <li>ルートの作者として表示される名前(プロフィール名)は、結縁帳で互いに友だちになっている相手にだけ表示され、それ以外の方には「旅人」と表示されます。アカウント ID は他のユーザーに表示されません(編集・削除・回数制限のためにサーバーで保持します)。</li>
+      <li>あなたの「いいね」と「使った」の記録、「表示しない」にしたルートと旅人の一覧もサーバーに保存されます。回数制限のための操作記録は 7 日を過ぎると削除されます。</li>
+      <li>公開はいつでも取り消せます(ルートと、その「いいね」・使用の記録が削除されます)。ほかの人が自分の旅程に使ったコピーは、その人の端末に残ります。</li>
+      <li>法令や本サービスの趣旨に反すると判断したルートは、予告なく削除することがあります。</li>
     </ul>
     <h4>旅の手帳(PDF)</h4>
     <ul>
@@ -204,7 +215,7 @@
     <h3>14. 外部事業者と外国への移転</h3>
     <p>当方は、次の事業者に情報の取り扱いを委託し、または送信しています。</p>
     <ul>
-      <li>Supabase, Inc.:データベース・認証・サーバー処理(データの保存場所は日本・東京)。アカウント、バックアップ、友だち、旅の共有、購入記録、AI の利用回数、場所の検索の中継。</li>
+      <li>Supabase, Inc.:データベース・認証・サーバー処理(データの保存場所は日本・東京)。アカウント、バックアップ、友だち、旅の共有、みんなのルート、購入記録、AI の利用回数、場所の検索の中継。</li>
       <li>RevenueCat, Inc.(米国):購入の管理。</li>
       <li>OpenAI(米国):AI 旅のおとも(同意した場合のみ)。</li>
       <li>Apple Inc.(米国):App Store と決済、Sign in with Apple。</li>
@@ -224,6 +235,9 @@
       <li>クラウドのバックアップ:アカウントを削除するまで。削除済みの記録は、定期的な整理時または遅くともアカウント削除時に消去されます。</li>
       <li>友だち・名刺情報:友だちの解除またはアカウントの削除まで。</li>
       <li>共有した旅:旅が削除されるまで(第5章)。</li>
+      <li>最近行ったところの公開データ:公開をオフにするか、アカウントを削除するまで。</li>
+      <li>友だちからの旅の招待:承諾・辞退・取り消しまで。最長 14 日で期限切れになり、定期的に削除されます。</li>
+      <li>みんなのルート:公開を取り消すか、アカウントを削除するまで。回数制限のための操作記録は 7 日。</li>
       <li>購入・付与・引き換えの記録(当方のサーバー):アカウントの削除まで。Apple と RevenueCat の記録は各社の方針に従います。</li>
       <li>AI:会話履歴は端末内のみ(マイページから削除可能)。利用回数などの記録はアカウントの削除まで。OpenAI では最長 30 日。</li>
       <li>場所の検索:検索語と座標は保存しません(メモリ上の一時的な保持は最長 10 分)。補った場所の名前は、ユーザーと紐づけずに最長 7 日間メモリ上に保持します。検索結果から追加した場所は、記録の一部として保存されます。</li>
@@ -234,7 +248,7 @@
     <h3>16. アカウントの削除</h3>
     <ul>
       <li>マイページ →「アカウント」→「アカウントを削除」から、いつでも削除できます。</li>
-      <li>削除すると、アカウント(メールアドレス、パスワード、Apple のユーザー識別子・氏名などのログイン情報)と、クラウド上のデータ(バックアップ、名刺情報、友だち関係、ブロック、購入・付与・引き換え・AI 利用の記録、共有した旅のメンバー資格と発行した招待コード)が削除されます。元に戻すことはできません。</li>
+      <li>削除すると、アカウント(メールアドレス、パスワード、Apple のユーザー識別子・氏名などのログイン情報)と、クラウド上のデータ(バックアップ、名刺情報、友だち関係、ブロック、購入・付与・引き換え・AI 利用の記録、共有した旅のメンバー資格と発行した招待コード、最近行ったところの公開データ、公開したルートと「いいね」・使用・非表示の記録)が削除されます。元に戻すことはできません。</li>
       <li>Sign in with Apple を使っているアカウント(Apple を連携したアカウントを含む)では、削除の前に Apple の認証画面がもう一度表示され、当方のサーバーを通じて、本アプリに対する Sign in with Apple の認可の取り消しを Apple に依頼します。この取り消しは可能な範囲で行うもので、認証画面を閉じた場合や取り消しに失敗した場合もアカウントは削除されます。その場合は、iPhone の「設定」→ Apple アカウント →「サインインとセキュリティ」→「Apple でサインイン」から、本アプリの使用を停止できます。</li>
       <li>端末内のデータは残ります。不要な場合はアプリを削除してください。共有した旅の内容の扱いは第5章のとおりです。</li>
       <li>アプリから削除できない場合は、第21章の窓口までご連絡ください。</li>
@@ -285,7 +299,7 @@
     <h3>2. 不建立帳號(訪客)</h3>
     <ul>
       <li>記錄、照片、筆記、旅行計畫、眷屬養成進度與設定等,全部儲存在你的裝置上(App 內的資料庫與文件資料夾),不會傳送到我們的伺服器。</li>
-      <li>無法使用需要帳號的功能,例如雲端備份/還原、好友(結緣)、共享旅行、AI 旅伴。</li>
+      <li>無法使用需要帳號的功能,例如雲端備份/還原、好友(結緣)、共享旅行、AI 旅伴、公開路線。訪客仍可瀏覽已公開的路線(第 5 節)。</li>
       <li>即使是訪客,為了地圖、天氣、App 設定、地點搜尋、App 更新與購買,仍會與第 12 節及第 6 節所列的外部服務連線。</li>
       <li>刪除 App 即刪除裝置上的所有資料。訪客的資料我們無法替你還原。</li>
     </ul>
@@ -311,24 +325,35 @@
       <li>加好友的方式是用相機互相掃描對方的名片 QR 碼。名片 QR 碼包含:個人名稱、目前的夥伴眷屬、羈絆階段、換裝、放晴的地區數、記錄數、裝置內的識別碼,以及登入時的使用者 ID。你出示 QR 碼的對象可以讀取這些資訊。</li>
       <li>登入時,名片資訊(個人名稱、眷屬、羈絆階段、換裝、放晴地區數、記錄數)會儲存在我們的伺服器,只有互相加為好友的人才能看到。</li>
       <li>只有在你開啟「共同足跡」分享時,你去過的內建景點(App 收錄的公開景點)ID 清單才會與好友分享,用來顯示你們都去過的地方。預設為關閉,可隨時在「我的」頁變更。自建地點、目前位置、照片、筆記不會分享。</li>
+      <li><strong>最近去過的地方</strong>:只有在你開啟公開時(預設為關閉),我們才會把你最近記錄的內建景點中最多 30 個的 ID 與造訪日期(只有日期)存到我們的伺服器,且只有互為好友的人能看到。自建地點、透過地點搜尋加入的地點、目前位置或座標、時刻、筆記、照片都不會分享。可在結緣帳與「我的」頁變更;關閉後,伺服器上的公開資料會立即刪除。</li>
       <li>你掃描對方的 QR 碼後,對方的「結緣邀請」清單會顯示你的個人名稱與眷屬。</li>
       <li>為防止濫用(大量加好友),我們會記錄加好友操作的時間。</li>
       <li>可在結緣帳解除好友或封鎖。解除後,雙方的互相瀏覽會立即停止。</li>
-      <li><strong>保存期間</strong>:好友關係、名片資訊、封鎖資訊與操作記錄會在刪除帳號時一併刪除。</li>
+      <li><strong>保存期間</strong>:好友關係、名片資訊、封鎖資訊、操作記錄與「最近去過的地方」公開資料會在刪除帳號時一併刪除。</li>
     </ul>
 
-    <h3>5. 共享旅行、傳送行程與 PDF</h3>
+    <h3>5. 共享旅行、傳送行程、大家的路線與 PDF</h3>
     <h4>共享旅行(一起規劃)</h4>
     <ul>
       <li>登入的使用者可以共享旅行並共同編輯。共享後,以下資訊會儲存在我們的伺服器(Supabase),該旅行的所有成員(含僅能檢視的成員)都能看到:旅行標題、日期、國別;行程(景點/停留點名稱、時刻、停留時間、備註、完成狀態;內建景點為公開座標);行前清單;共同帳本(金額、幣別、分類、備註、付款人與分帳對象);共享的預約(名稱、訂位代號、日期時間、地點、地址、備註);成員的個人名稱、眷屬與角色;誰在何時修改的記錄。</li>
       <li>旅程整體的備註在共享時不會上傳。自建地點只會帶名稱,不會分享座標。透過地點搜尋加入的地點,會以公開地圖資料(OpenStreetMap)的名稱與座標分享。</li>
       <li>修改會即時傳送到其他成員的裝置。</li>
       <li>知道邀請碼/連結的人(預設 72 小時內、最多 5 次有效)可以加入該旅行,並在加入前看到旅行標題以及邀請人的個人名稱與眷屬。請只把邀請碼傳給信任的人。</li>
+      <li>你也可以從結緣帳邀請互為好友的人加入旅行。這種邀請只有被邀請的本人能看到並接受,會顯示旅行標題、日期,以及邀請人的個人名稱與眷屬。邀請人可以撤回邀請。邀請 14 天後過期,過期的邀請會定期刪除。</li>
       <li><strong>保存期間與刪除</strong>:共享旅行會保存到發起人刪除,或成員都離開為止。在旅行中刪除的花費/預約會標記為已刪除,並在整趟旅行被刪除時完全清除。即使你退出旅行或刪除帳號,只要還有其他成員,你新增的內容仍會作為該旅行的一部分保留(但會移除與你名字的連結)。</li>
     </ul>
     <h4>傳送行程(連結、QR 碼、代碼)</h4>
     <ul>
       <li>此功能會把行程與行前清單轉成連結、QR 碼或文字代碼,由你選擇的方式(例如通訊軟體)傳送,不經過我們的伺服器。不包含記錄、照片、花費與同行者;自建地點只包含名稱。</li>
+    </ul>
+    <h4>大家的路線(公開路線)</h4>
+    <ul>
+      <li>在功能開放時,登入的使用者可以把旅程「分享成公開路線」。分享後,以下資訊會公開給本 App 的使用者(含訪客):景點(App 內建的景點目錄,以及用地點搜尋選到的公開地點)的名稱、位置、順序、第幾天、建議停留時間,天數、國家與地區,發佈時從選單選的項目(旅行風格、跟誰去、節奏、交通、季節、封面與亮點景點),發佈與更新時間,以及愛心數與套用次數。</li>
+      <li>自建地點、照片、備註、花費、預約、同行者、旅程標題與日期都不會公開。沒有任何可以自由輸入文字的欄位。</li>
+      <li>路線作者的名字(個人名稱)只會顯示給在結緣帳互為好友的人,其他人看到的一律是「旅人」。帳號 ID 不會顯示給其他使用者(伺服器保留它,用於編輯、刪除與次數限制)。</li>
+      <li>你按的愛心與套用紀錄,以及設為「不想看到」的路線與旅人名單也會存在伺服器;次數限制用的操作紀錄超過 7 天就會刪除。</li>
+      <li>你可以隨時取消公開(路線連同其愛心與套用紀錄一併刪除)。其他人已經套用到自己行程的副本會留在他們自己的裝置上。</li>
+      <li>我們判斷違反法令或本服務宗旨的路線,可能不經通知直接刪除。</li>
     </ul>
     <h4>旅行手帳(PDF)</h4>
     <ul>
@@ -409,7 +434,7 @@
     <h3>14. 外部服務商與跨境傳輸</h3>
     <p>我們委託下列服務商處理資訊,或將資訊傳送給它們:</p>
     <ul>
-      <li>Supabase, Inc.:資料庫、認證與伺服器處理(資料存放於日本東京)。帳號、備份、好友、共享旅行、購買記錄、AI 使用次數、地點搜尋的轉送。</li>
+      <li>Supabase, Inc.:資料庫、認證與伺服器處理(資料存放於日本東京)。帳號、備份、好友、共享旅行、大家的路線、購買記錄、AI 使用次數、地點搜尋的轉送。</li>
       <li>RevenueCat, Inc.(美國):購買管理。</li>
       <li>OpenAI(美國):AI 旅伴(僅限同意時)。</li>
       <li>Apple Inc.(美國):App Store、付款與使用 Apple 登入。</li>
@@ -429,6 +454,9 @@
       <li>雲端備份:保存到你刪除帳號為止。已刪除的記錄會在定期清理時,或最遲在刪除帳號時清除。</li>
       <li>好友與名片資訊:保存到解除好友或刪除帳號為止。</li>
       <li>共享旅行:保存到該旅行被刪除為止(第 5 節)。</li>
+      <li>「最近去過的地方」公開資料:保存到你關閉公開或刪除帳號為止。</li>
+      <li>好友的旅行邀請:保存到接受、婉拒或撤回為止;最多 14 天後過期,並會定期刪除。</li>
+      <li>大家的路線:保存到你取消公開或刪除帳號為止;次數限制用的操作紀錄 7 天。</li>
       <li>購買、發放與兌換記錄(我們的伺服器):保存到刪除帳號為止。Apple 與 RevenueCat 的記錄依各公司政策。</li>
       <li>AI:對話紀錄只在裝置上(可在「我的」頁刪除);使用次數等記錄保存到刪除帳號為止;OpenAI 最多 30 天。</li>
       <li>地點搜尋:不保存搜尋詞與座標(記憶體中的暫存最多 10 分鐘)。補上的地點名稱在不與使用者連結的情況下於記憶體中保存最多 7 天。從搜尋結果加入的地點,會作為記錄的一部分保存。</li>
@@ -439,7 +467,7 @@
     <h3>16. 刪除帳號</h3>
     <ul>
       <li>你隨時可以在「我的」→「帳號」→「刪除帳號」刪除帳號。</li>
-      <li>刪除後,帳號(電子郵件、密碼、Apple 使用者識別碼與姓名等登入資訊)以及雲端上的資料(備份、名片資訊、好友關係、封鎖、購買/發放/兌換/AI 使用記錄、共享旅行的成員資格與你發出的邀請碼)都會刪除,且無法復原。</li>
+      <li>刪除後,帳號(電子郵件、密碼、Apple 使用者識別碼與姓名等登入資訊)以及雲端上的資料(備份、名片資訊、好友關係、封鎖、購買/發放/兌換/AI 使用記錄、共享旅行的成員資格與你發出的邀請碼、「最近去過的地方」公開資料、你公開的路線與愛心/套用/不想看到的紀錄)都會刪除,且無法復原。</li>
       <li>使用「使用 Apple 登入」的帳號(含已連結 Apple 的帳號),刪除前會再出現一次 Apple 驗證畫面,並透過我們的伺服器請 Apple 撤銷本 App 的「使用 Apple 登入」授權。撤銷會盡力進行;即使你關閉驗證畫面或撤銷失敗,帳號仍會被刪除。此時可到 iPhone「設定」→ 你的 Apple 帳號 →「登入與安全性」→「使用 Apple 登入」停止本 App 的使用。</li>
       <li>裝置上的資料會保留;不需要的話請刪除 App。共享旅行內容的處理方式請見第 5 節。</li>
       <li>若無法在 App 內刪除,請透過第 21 節的聯絡方式與我們聯繫。</li>
@@ -490,7 +518,7 @@
     <h3>2. Using the App without an account (guest)</h3>
     <ul>
       <li>Your records, photos, notes, trip plans, companion progress and settings are all stored on your device (the App's database and documents folder) and are not sent to our server.</li>
-      <li>Features that need an account (cloud backup/restore, friends ("kizuna"), shared trips, the AI travel companion) are not available.</li>
+      <li>Features that need an account (cloud backup/restore, friends ("kizuna"), shared trips, the AI travel companion, sharing community routes) are not available. Guests can still browse shared community routes (Section 5).</li>
       <li>Even as a guest, the App connects to the external services listed in Sections 12 and 6 for maps, weather, app settings, place search, app updates and purchases.</li>
       <li>Deleting the App deletes all data on the device. We cannot restore a guest's data.</li>
     </ul>
@@ -516,24 +544,35 @@
       <li>You add a friend by scanning each other's friend-card QR code with the camera. The QR code contains your profile name, current companion, bond level, outfit, number of cleared regions, number of records, an on-device identifier and, when signed in, your user ID. Anyone you show the QR code to can read this information.</li>
       <li>When you are signed in, your card information (profile name, companion, bond level, outfit, cleared regions, record count) is stored on our server and can be viewed only by mutual friends.</li>
       <li>Only if you turn on "shared footprints" is the list of IDs of built-in places you have visited (public places included in the App) shared with friends, to show places you have both visited. It is off by default and can be changed at any time on My Page. Places you registered yourself, your current location, photos and notes are never shared.</li>
+      <li><strong>Recently visited</strong>: only if you turn on sharing (it is off by default), we store on our server the IDs of up to 30 built-in places you recorded most recently, with the visit dates (date only), and only mutual friends can see them. Places you registered yourself, places added from place search, your location or coordinates, times, notes and photos are never shared. You can change this in the kizuna book and on My Page; turning it off deletes the shared data on our server immediately.</li>
       <li>When you scan someone's QR code, your profile name and companion appear in that person's list of friend invitations.</li>
       <li>To prevent abuse (mass friend-adding), we record when friend links are made.</li>
       <li>You can remove or block a friend from the kizuna book. Once removed, mutual viewing stops immediately.</li>
-      <li><strong>Retention</strong>: friend links, card information, blocks and these records are deleted when you delete your account.</li>
+      <li><strong>Retention</strong>: friend links, card information, blocks, these records and your shared "recently visited" data are deleted when you delete your account.</li>
     </ul>
 
-    <h3>5. Shared trips, sending itineraries, and PDF</h3>
+    <h3>5. Shared trips, sending itineraries, community routes, and PDF</h3>
     <h4>Shared trips (plan together)</h4>
     <ul>
       <li>Signed-in users can share a trip and edit it together. When you share a trip, the following is stored on our server (Supabase) and visible to all members of that trip (including view-only members): trip title, dates and country; itinerary (names of places/stops, times, length of stay, notes, completion status; built-in places use their public coordinates); packing list; shared expense ledger (amount, currency, category, note, who paid and who shares the cost); shared bookings (name, confirmation number, date and time, place, address, note); members' profile names, companions and roles; and records of who changed what and when.</li>
       <li>The trip's overall note is not uploaded. Places you registered yourself are shared by name only, never with coordinates. Places you added from place search are shared with their name and coordinates from public map data (OpenStreetMap).</li>
       <li>Changes are delivered to other members' devices in real time.</li>
       <li>Anyone who has an invite code or link (valid by default for 72 hours and up to 5 uses) can join the trip, and can see the trip title and the inviter's profile name and companion before joining. Please share invite codes only with people you trust.</li>
+      <li>You can also invite a mutual friend to a trip from the kizuna book. Only the invited person can see and accept this invitation, which shows the trip's title and dates and the inviter's profile name and companion. The inviter can cancel it. Invitations expire after 14 days, and expired invitations are deleted periodically.</li>
       <li><strong>Retention and deletion</strong>: a shared trip is kept until the organizer deletes it or no members remain. Expenses and bookings deleted within a trip are marked as deleted and permanently erased when the trip is deleted. If you leave a trip or delete your account while other members remain, the content you added stays as part of the trip, no longer linked to your name.</li>
     </ul>
     <h4>Sending an itinerary (link, QR code, text code)</h4>
     <ul>
       <li>This converts an itinerary and packing list into a link, QR code or text code that you send by a method you choose (such as a messaging app). It does not pass through our server. It contains no records, photos, expenses or companions; places you registered yourself are included by name only.</li>
+    </ul>
+    <h4>Community routes (shared routes)</h4>
+    <ul>
+      <li>While the feature is offered, signed-in users can share a trip as a public route. The following then becomes visible to users of the App (including guests): the places (guide spots built into the App and public places chosen through place search) with their names, locations, order, day and suggested length of stay; the number of days, country and area; the options picked from the menus when sharing (trip style, who with, pace, getting around, season, cover and highlight stops); when the route was shared and updated; and the like and "used" counts.</li>
+      <li>Places you registered yourself, photos, notes, expenses, bookings, companions, and the trip's title and dates are never shared. There are no free-text fields.</li>
+      <li>The author's name (profile name) is shown only to people who are mutual friends with them in the kizuna book; everyone else sees "Traveler". Account IDs are never shown to other users (the server keeps them to allow editing, deletion and rate limits).</li>
+      <li>Your likes, "used" records and the routes or travelers you chose to hide are also stored on our server; activity logs used for rate limits are deleted after 7 days.</li>
+      <li>You can stop sharing at any time (the route and its likes and "used" records are deleted). Copies that others already added to their own trips stay on their devices.</li>
+      <li>We may remove routes that we judge to violate the law or the purpose of the service without notice.</li>
     </ul>
     <h4>Trip book (PDF)</h4>
     <ul>
@@ -614,7 +653,7 @@
     <h3>14. Service providers and international transfers</h3>
     <p>We entrust the handling of information to, or send information to, the following providers:</p>
     <ul>
-      <li>Supabase, Inc.: database, authentication and server processing (data stored in Tokyo, Japan). Accounts, backups, friends, shared trips, purchase records, AI usage counts, relaying place searches.</li>
+      <li>Supabase, Inc.: database, authentication and server processing (data stored in Tokyo, Japan). Accounts, backups, friends, shared trips, community routes, purchase records, AI usage counts, relaying place searches.</li>
       <li>RevenueCat, Inc. (USA): purchase management.</li>
       <li>OpenAI (USA): AI travel companion (only with your consent).</li>
       <li>Apple Inc. (USA): App Store, payments and Sign in with Apple.</li>
@@ -634,6 +673,9 @@
       <li>Cloud backup: kept until you delete your account. Deleted records are erased during periodic cleanup or, at the latest, when you delete your account.</li>
       <li>Friends and card information: kept until you remove the friend or delete your account.</li>
       <li>Shared trips: kept until the trip is deleted (Section 5).</li>
+      <li>Shared "recently visited" data: kept until you turn sharing off or delete your account.</li>
+      <li>Trip invitations from friends: kept until accepted, declined or cancelled; they expire after 14 days and are deleted periodically.</li>
+      <li>Community routes: kept until you stop sharing or delete your account; rate-limit activity logs for 7 days.</li>
       <li>Purchase, grant and redemption records (our server): kept until you delete your account. Apple's and RevenueCat's records follow their policies.</li>
       <li>AI: chat history on your device only (deletable on My Page); usage records until you delete your account; up to 30 days at OpenAI.</li>
       <li>Place search: search text and coordinates are not stored (temporary in-memory caching for up to 10 minutes). Added place names are kept in memory for up to 7 days, not linked to you. Places you add from the results are saved as part of your records.</li>
@@ -644,7 +686,7 @@
     <h3>16. Deleting your account</h3>
     <ul>
       <li>You can delete your account at any time from My Page (マイページ) → Account (アカウント) → Delete account (アカウントを削除).</li>
-      <li>Deleting your account deletes the account (sign-in information such as your email address, password, Apple user identifier and name) and your data in the cloud (backup, card information, friend links, blocks, purchase/grant/redemption/AI usage records, shared-trip memberships and invite codes you created). This cannot be undone.</li>
+      <li>Deleting your account deletes the account (sign-in information such as your email address, password, Apple user identifier and name) and your data in the cloud (backup, card information, friend links, blocks, purchase/grant/redemption/AI usage records, shared-trip memberships and invite codes you created, your shared "recently visited" data, and your shared routes with your like, "used" and hide records). This cannot be undone.</li>
       <li>For accounts that use Sign in with Apple (including accounts with a linked Apple Account), the Apple sign-in sheet appears once more before deletion, and our server asks Apple to revoke the App's Sign in with Apple authorization. This is done on a best-effort basis: if you close the sheet or the revocation fails, your account is still deleted. In that case, you can stop using Sign in with Apple for the App in iPhone Settings &gt; your Apple Account &gt; Sign-In &amp; Security &gt; Sign in with Apple.</li>
       <li>Data on your device remains; delete the App if you no longer need it. For content in shared trips, see Section 5.</li>
       <li>If you cannot delete your account in the App, please contact us (Section 21).</li>

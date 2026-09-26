@@ -1,5 +1,5 @@
 {
-  "configVersion": 4,
+  "configVersion": 5,
   "minAppVersion": "1.0.0",
   "killSwitch": false,
   "notice": null,
@@ -10,5 +10,8 @@
     "wardrobe": [],
     "treasure": [],
     "mapRegion": []
+  },
+  "enable": {
+    "aiCompanion": true
   }
 }

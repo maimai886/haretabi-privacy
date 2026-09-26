@@ -1,5 +1,5 @@
 {
-  "configVersion": 5,
+  "configVersion": 6,
   "minAppVersion": "1.0.0",
   "killSwitch": false,
   "notice": null,
@@ -12,6 +12,7 @@
     "mapRegion": []
   },
   "enable": {
-    "aiCompanion": true
+    "aiCompanion": true,
+    "spotBatch": ["wave3_jp_castle100", "wave3_jp_sights", "wave3_tw_sights"]
   }
 }

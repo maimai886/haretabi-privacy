@@ -1,5 +1,5 @@
 {
-  "configVersion": 6,
+  "configVersion": 7,
   "minAppVersion": "1.0.0",
   "killSwitch": false,
   "notice": null,
@@ -13,6 +13,7 @@
   },
   "enable": {
     "aiCompanion": true,
-    "spotBatch": ["wave3_jp_castle100", "wave3_jp_sights", "wave3_tw_sights"]
+    "spotBatch": ["wave3_jp_castle100", "wave3_jp_sights", "wave3_tw_sights"],
+    "communityRoutes": true
   }
 }

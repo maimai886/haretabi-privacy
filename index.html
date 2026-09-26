@@ -187,7 +187,7 @@
     <ul>
       <li><strong>地図</strong>:OpenFreeMap から地図タイルを取得します。IP アドレスなどの通常の接続情報と、表示している地図の範囲が送信されます。</li>
       <li><strong>天気</strong>:MET Norway(ノルウェー気象研究所)に、丸めた座標を送信します(第8章)。</li>
-      <li><strong>場所の検索</strong>:旅の計画で場所を検索するとき(AI 旅のおともが行程を考えるときを含む)、入力した検索語(AI の場合は AI が作成した検索語)、近さの目安となる座標(旅の行程・目的地・記録した場所から求めたもので、現在地ではありません)、国、表示言語を当方のサーバー(Supabase)に送り、当方のサーバーが Photon(komoot、ドイツ。OpenStreetMap のデータを使う検索サービス)に転送します。Photon に送るのは、検索語、小数点以下 2 桁(おおむね 1 km 程度)に丸めた座標、国、表示言語のみで、ユーザー ID、ログイン情報、あなたの IP アドレスは送りません。当方のサーバーは検索語と座標を保存せず(処理の高速化のため、ユーザーと紐づけずに最長 10 分間メモリ上に保持することがあります)、ログには結果の件数のみを記録します。短時間の大量の検索を防ぐため、ユーザー ID(ゲストは IP アドレス)をメモリ上でのみ一時的に使います。検索結果は OpenStreetMap のデータです(© OpenStreetMap contributors)。</li>
+      <li><strong>場所の検索</strong>:旅の計画で場所を検索するとき(AI 旅のおともが行程を考えるときを含む)、入力した検索語(AI の場合は AI が作成した検索語)、近さの目安となる座標(旅の行程・目的地・記録した場所から求めたもので、現在地ではありません)、国、表示言語を当方のサーバー(Supabase)に送り、当方のサーバーが Photon(komoot、ドイツ。OpenStreetMap のデータを使う検索サービス)に転送します。Photon に送るのは、検索語、小数点以下 2 桁(おおむね 1 km 程度)に丸めた座標、国、表示言語のみで、ユーザー ID、ログイン情報、あなたの IP アドレスは送りません。当方のサーバーは検索語と座標を保存せず(処理の高速化のため、ユーザーと紐づけずに最長 10 分間メモリ上に保持することがあります)、ログには結果の件数のみを記録します。短時間の大量の検索を防ぐため、ユーザー ID(ゲストは IP アドレス)をメモリ上でのみ一時的に使います。検索結果は OpenStreetMap のデータです(© OpenStreetMap contributors)。表示言語が中国語または英語の場合は、検索結果に中国語・英語の名前を補うため、当方のサーバーがさらに次の問い合わせを行います。Wikidata(Wikimedia Foundation、米国)には、見つかった場所の OpenStreetMap 上の名前とその場所自体の座標(公開の地図データ)、および Wikidata の項目 ID を送ります。Nominatim(OpenStreetMap Foundation、英国)には、OpenStreetMap のオブジェクト ID のみを送ります(可能な場合のみ)。どちらにも、入力した検索語、あなたの位置、言語設定、ユーザー ID、あなたの IP アドレスは送りません(ただし、見つかった場所の名前は入力した検索語と似ていることがよくあります)。補った名前は、ユーザーと紐づけずに場所ごとに最長 7 日間サーバーのメモリ上に保持し、ログには通信エラーの種類のみを記録します。これらの問い合わせで名乗るアプリ名(User-Agent)には本ページの URL のみを含み、個人情報は含みません。</li>
       <li><strong>アプリ設定</strong>:機能の提供状況などを記した設定ファイルを GitHub Pages(GitHub, Inc.)から取得します。送信されるのは IP アドレスなどの通常の接続情報のみです。</li>
       <li><strong>アプリの更新</strong>:Expo(EAS Update)からアプリの更新を取得します。アプリのバージョン、端末の種類、更新機能が生成するランダムな識別子、IP アドレスなどの接続情報が送信される場合があります。</li>
       <li><strong>外部サイト</strong>:名所ページの「公式サイト」「Wikipedia」などのリンクはアプリ内ブラウザで開きます。表示先のサイトのプライバシーポリシーが適用されます。</li>
@@ -210,6 +210,8 @@
       <li>Apple Inc.(米国):App Store と決済、Sign in with Apple。</li>
       <li>MET Norway(ノルウェー):天気。</li>
       <li>komoot GmbH(ドイツ):場所の検索(Photon)。</li>
+      <li>Wikimedia Foundation, Inc.(米国):場所の名前の補完(Wikidata)。</li>
+      <li>OpenStreetMap Foundation(英国):場所の名前の補完(Nominatim)。</li>
       <li>OpenFreeMap:地図タイル。</li>
       <li>Expo / 650 Industries, Inc.(米国):アプリの更新配信。</li>
       <li>GitHub, Inc.(米国):設定ファイルの配信。</li>
@@ -224,7 +226,7 @@
       <li>共有した旅:旅が削除されるまで(第5章)。</li>
       <li>購入・付与・引き換えの記録(当方のサーバー):アカウントの削除まで。Apple と RevenueCat の記録は各社の方針に従います。</li>
       <li>AI:会話履歴は端末内のみ(マイページから削除可能)。利用回数などの記録はアカウントの削除まで。OpenAI では最長 30 日。</li>
-      <li>場所の検索:検索語と座標は保存しません(メモリ上の一時的な保持は最長 10 分)。検索結果から追加した場所は、記録の一部として保存されます。</li>
+      <li>場所の検索:検索語と座標は保存しません(メモリ上の一時的な保持は最長 10 分)。補った場所の名前は、ユーザーと紐づけずに最長 7 日間メモリ上に保持します。検索結果から追加した場所は、記録の一部として保存されます。</li>
       <li>技術的なログ:短期間で自動的に削除されます。</li>
       <li>当方が利用するクラウドサービスの障害対策用バックアップに、削除後も短期間残る場合があります。</li>
     </ul>
@@ -390,7 +392,7 @@
     <ul>
       <li><strong>地圖</strong>:從 OpenFreeMap 取得地圖圖磚,會傳送 IP 位址等一般連線資訊與目前顯示的地圖範圍。</li>
       <li><strong>天氣</strong>:把四捨五入後的座標傳送給 MET Norway(挪威氣象研究所)(第 8 節)。</li>
-      <li><strong>地點搜尋</strong>:在旅行規劃中搜尋地點時(包含 AI 旅伴規劃行程時),會把你輸入的搜尋詞(AI 規劃時為 AI 產生的搜尋詞)、作為遠近參考的座標(由該旅行的行程、目的地或已記錄的地點算出,不是你的目前位置)、國別與顯示語言傳送到我們的伺服器(Supabase),再由我們的伺服器轉送給 Photon(komoot,德國;使用 OpenStreetMap 資料的搜尋服務)。傳給 Photon 的只有搜尋詞、四捨五入到小數點後 2 位(約 1 公里左右)的座標、國別與顯示語言,不包含使用者 ID、登入資訊或你的 IP 位址。我們的伺服器不保存搜尋詞與座標(為了加快處理,可能在不與使用者連結的情況下於記憶體中暫存最多 10 分鐘),記錄中只留結果筆數。為防止短時間大量搜尋,會在記憶體中暫時使用使用者 ID(訪客為 IP 位址)。搜尋結果為 OpenStreetMap 資料(© OpenStreetMap contributors)。</li>
+      <li><strong>地點搜尋</strong>:在旅行規劃中搜尋地點時(包含 AI 旅伴規劃行程時),會把你輸入的搜尋詞(AI 規劃時為 AI 產生的搜尋詞)、作為遠近參考的座標(由該旅行的行程、目的地或已記錄的地點算出,不是你的目前位置)、國別與顯示語言傳送到我們的伺服器(Supabase),再由我們的伺服器轉送給 Photon(komoot,德國;使用 OpenStreetMap 資料的搜尋服務)。傳給 Photon 的只有搜尋詞、四捨五入到小數點後 2 位(約 1 公里左右)的座標、國別與顯示語言,不包含使用者 ID、登入資訊或你的 IP 位址。我們的伺服器不保存搜尋詞與座標(為了加快處理,可能在不與使用者連結的情況下於記憶體中暫存最多 10 分鐘),記錄中只留結果筆數。為防止短時間大量搜尋,會在記憶體中暫時使用使用者 ID(訪客為 IP 位址)。搜尋結果為 OpenStreetMap 資料(© OpenStreetMap contributors)。顯示語言為中文或英文時,為了替搜尋結果補上中文、英文名稱,我們的伺服器還會進行下列查詢:向 Wikidata(Wikimedia Foundation,美國)傳送找到的地點在 OpenStreetMap 上的名稱與該地點本身的座標(公開地圖資料),以及 Wikidata 的項目 ID;向 Nominatim(OpenStreetMap Foundation,英國)只傳送 OpenStreetMap 的物件 ID(僅在可行時)。兩者都不會收到你輸入的搜尋詞、你的位置、語言設定、使用者 ID 或你的 IP 位址(但找到的地點名稱常與你輸入的搜尋詞相似)。補上的名稱會以地點為單位、在不與使用者連結的情況下於伺服器記憶體中保存最多 7 天,記錄中只留連線錯誤的種類。這些查詢所表明的 App 名稱(User-Agent)只含本頁網址,不含任何個人資料。</li>
       <li><strong>App 設定</strong>:從 GitHub Pages(GitHub, Inc.)取得記載功能開放狀態等的設定檔,只會傳送 IP 位址等一般連線資訊。</li>
       <li><strong>App 更新</strong>:從 Expo(EAS Update)取得 App 更新,可能會傳送 App 版本、裝置類型、更新機制產生的隨機識別碼,以及 IP 位址等連線資訊。</li>
       <li><strong>外部網站</strong>:景點頁的「官方網站」「Wikipedia」等連結會以 App 內瀏覽器開啟,適用該網站的隱私權政策。</li>
@@ -413,6 +415,8 @@
       <li>Apple Inc.(美國):App Store、付款與使用 Apple 登入。</li>
       <li>MET Norway(挪威):天氣。</li>
       <li>komoot GmbH(德國):地點搜尋(Photon)。</li>
+      <li>Wikimedia Foundation, Inc.(美國):補上地點名稱(Wikidata)。</li>
+      <li>OpenStreetMap Foundation(英國):補上地點名稱(Nominatim)。</li>
       <li>OpenFreeMap:地圖圖磚。</li>
       <li>Expo / 650 Industries, Inc.(美國):App 更新發布。</li>
       <li>GitHub, Inc.(美國):設定檔發布。</li>
@@ -427,7 +431,7 @@
       <li>共享旅行:保存到該旅行被刪除為止(第 5 節)。</li>
       <li>購買、發放與兌換記錄(我們的伺服器):保存到刪除帳號為止。Apple 與 RevenueCat 的記錄依各公司政策。</li>
       <li>AI:對話紀錄只在裝置上(可在「我的」頁刪除);使用次數等記錄保存到刪除帳號為止;OpenAI 最多 30 天。</li>
-      <li>地點搜尋:不保存搜尋詞與座標(記憶體中的暫存最多 10 分鐘)。從搜尋結果加入的地點,會作為記錄的一部分保存。</li>
+      <li>地點搜尋:不保存搜尋詞與座標(記憶體中的暫存最多 10 分鐘)。補上的地點名稱在不與使用者連結的情況下於記憶體中保存最多 7 天。從搜尋結果加入的地點,會作為記錄的一部分保存。</li>
       <li>技術記錄:短期內自動刪除。</li>
       <li>刪除後,資料可能在我們使用的雲端服務的災難備份中短期留存。</li>
     </ul>
@@ -593,7 +597,7 @@
     <ul>
       <li><strong>Maps</strong>: map tiles are loaded from OpenFreeMap. Normal connection information such as your IP address and the map area being displayed are sent.</li>
       <li><strong>Weather</strong>: rounded coordinates are sent to MET Norway (the Norwegian Meteorological Institute) (Section 8).</li>
-      <li><strong>Place search</strong>: when you search for a place while planning a trip (including when the AI travel companion plans an itinerary), the search text you type (or, for the AI, the search terms it writes), a reference coordinate for nearby results (derived from the places in your trip, not from your current location), the country and the display language are sent to our server (Supabase), which forwards them to Photon (by komoot, Germany; a search service using OpenStreetMap data). Photon receives only the search text, the coordinate rounded to two decimal places (roughly 1 km), the country and the display language; it does not receive your user ID, sign-in information or IP address. Our server does not store the search text or coordinates (to speed things up, it may keep them in memory for up to 10 minutes, not linked to you), and its logs record only the number of results. To prevent bursts of searches, your user ID (for guests, your IP address) is used briefly in memory only. Search results are OpenStreetMap data (© OpenStreetMap contributors).</li>
+      <li><strong>Place search</strong>: when you search for a place while planning a trip (including when the AI travel companion plans an itinerary), the search text you type (or, for the AI, the search terms it writes), a reference coordinate for nearby results (derived from the places in your trip, not from your current location), the country and the display language are sent to our server (Supabase), which forwards them to Photon (by komoot, Germany; a search service using OpenStreetMap data). Photon receives only the search text, the coordinate rounded to two decimal places (roughly 1 km), the country and the display language; it does not receive your user ID, sign-in information or IP address. Our server does not store the search text or coordinates (to speed things up, it may keep them in memory for up to 10 minutes, not linked to you), and its logs record only the number of results. To prevent bursts of searches, your user ID (for guests, your IP address) is used briefly in memory only. Search results are OpenStreetMap data (© OpenStreetMap contributors). When your display language is Chinese or English, our server also makes the following requests to add Chinese and English names to the results: to Wikidata (Wikimedia Foundation, USA), it sends the OpenStreetMap names of the places found together with those places' own coordinates (public map data), and Wikidata item IDs; to Nominatim (OpenStreetMap Foundation, UK), it sends only OpenStreetMap object IDs (best-effort). Neither receives your search text, your location, your language setting, your user ID or your IP address (although a place's name is often similar to what you typed). The added names are kept in our server's memory for up to 7 days per place, not linked to you, and our logs record only the type of any connection error. The app name (User-Agent) used in these requests contains only this page's URL and no personal information.</li>
       <li><strong>App settings</strong>: a settings file describing which features are available is loaded from GitHub Pages (GitHub, Inc.). Only normal connection information such as your IP address is sent.</li>
       <li><strong>App updates</strong>: app updates are loaded from Expo (EAS Update). The app version, device type, a random identifier generated by the update mechanism, and connection information such as your IP address may be sent.</li>
       <li><strong>External websites</strong>: links such as "Official website" and "Wikipedia" on place pages open in an in-app browser; the privacy policy of that website applies.</li>
@@ -616,6 +620,8 @@
       <li>Apple Inc. (USA): App Store, payments and Sign in with Apple.</li>
       <li>MET Norway (Norway): weather.</li>
       <li>komoot GmbH (Germany): place search (Photon).</li>
+      <li>Wikimedia Foundation, Inc. (USA): adding place names (Wikidata).</li>
+      <li>OpenStreetMap Foundation (UK): adding place names (Nominatim).</li>
       <li>OpenFreeMap: map tiles.</li>
       <li>Expo / 650 Industries, Inc. (USA): app update delivery.</li>
       <li>GitHub, Inc. (USA): settings file delivery.</li>
@@ -630,7 +636,7 @@
       <li>Shared trips: kept until the trip is deleted (Section 5).</li>
       <li>Purchase, grant and redemption records (our server): kept until you delete your account. Apple's and RevenueCat's records follow their policies.</li>
       <li>AI: chat history on your device only (deletable on My Page); usage records until you delete your account; up to 30 days at OpenAI.</li>
-      <li>Place search: search text and coordinates are not stored (temporary in-memory caching for up to 10 minutes). Places you add from the results are saved as part of your records.</li>
+      <li>Place search: search text and coordinates are not stored (temporary in-memory caching for up to 10 minutes). Added place names are kept in memory for up to 7 days, not linked to you. Places you add from the results are saved as part of your records.</li>
       <li>Technical logs: deleted automatically after a short period.</li>
       <li>After deletion, data may remain for a short period in the disaster-recovery backups of the cloud services we use.</li>
     </ul>

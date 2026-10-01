@@ -1,10 +1,10 @@
 {
-  "configVersion": 8,
+  "configVersion": 9,
   "minAppVersion": "1.0.0",
   "killSwitch": false,
   "notice": null,
   "disable": {
-    "kemono": ["yatagarasu", "hebi", "tora", "tengu", "ryujin", "manekineko", "shachihoko", "bixi", "senrigan", "junpuji", "fenghuang", "sekitoba"],
+    "kemono": [],
     "category": [],
     "spotBatch": [],
     "wardrobe": [],

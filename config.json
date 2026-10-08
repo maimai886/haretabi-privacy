@@ -1,6 +1,6 @@
 {
-  "configVersion": 10,
-  "minAppVersion": "1.0.0",
+  "configVersion": 11,
+  "minAppVersion": "1.7.0",
   "killSwitch": false,
   "notice": null,
   "disable": {

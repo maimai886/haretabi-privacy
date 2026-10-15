@@ -1,5 +1,5 @@
 {
-  "configVersion": 11,
+  "configVersion": 12,
   "minAppVersion": "1.7.0",
   "killSwitch": false,
   "notice": null,
@@ -13,7 +13,14 @@
   },
   "enable": {
     "aiCompanion": true,
-    "spotBatch": ["wave3_jp_castle100", "wave3_jp_sights", "wave3_tw_sights", "wave4_asobi", "wave5_jp_onsen"],
-    "communityRoutes": true
+    "spotBatch": [
+      "wave3_jp_castle100",
+      "wave3_jp_sights",
+      "wave3_tw_sights",
+      "wave4_asobi",
+      "wave5_jp_onsen"
+    ],
+    "communityRoutes": true,
+    "roomVisit": true
   }
 }

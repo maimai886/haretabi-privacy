@@ -1,5 +1,5 @@
 {
-  "configVersion": 12,
+  "configVersion": 13,
   "minAppVersion": "1.7.0",
   "killSwitch": false,
   "notice": null,
@@ -21,6 +21,7 @@
       "wave5_jp_onsen"
     ],
     "communityRoutes": true,
-    "roomVisit": true
+    "roomVisit": true,
+    "roomNote": true
   }
 }
